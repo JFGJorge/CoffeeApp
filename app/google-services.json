@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "98386384960",
+    "firebase_url": "https://app-dispositivos-moviles-default-rtdb.firebaseio.com",
+    "project_id": "app-dispositivos-moviles",
+    "storage_bucket": "app-dispositivos-moviles.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98386384960:android:5a228addc2cae49c2aa7a5",
+        "android_client_info": {
+          "package_name": "com.example.coffeeapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4NgxCTIrvTiVVscPfl4DUm6UUrrfDOps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
