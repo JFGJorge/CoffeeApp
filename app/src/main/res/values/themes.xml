@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.CoffeeApp" parent="Base.Theme.CoffeeApp" />
+    <style name="Theme.CoffeeApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.CoffeeApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.CoffeeApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
