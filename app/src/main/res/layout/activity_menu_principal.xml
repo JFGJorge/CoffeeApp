@@ -6,4 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".MenuPrincipal">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Agregar"
+        android:layout_width="159dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="44dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@color/botones"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/CerrarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@color/botones"
+        android:contentDescription="@string/common_google_play_services_unknown_issue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Salir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CerrarSesion" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/AgregarBebidaa"
+        android:layout_width="56dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/Agregar"
+        app:layout_constraintEnd_toEndOf="@+id/Agregar"
+        app:srcCompat="@drawable/baseline_coffee_24"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/AgregarPostre"
+        android:layout_width="56dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/AgregarBebidaa"
+        app:layout_constraintEnd_toEndOf="@+id/AgregarBebidaa"
+        app:srcCompat="@drawable/baseline_breakfast_dining_24"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

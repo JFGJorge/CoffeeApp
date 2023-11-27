@@ -64,6 +64,10 @@ class RegistrarUsuario : AppCompatActivity() {
             if(task.isSuccessful){
                 Toast.makeText(baseContext, "¡Cuenta creada con éxito!", Toast.LENGTH_SHORT).show()
                 val i = Intent(this, MainActivity:: class.java)
+
+                val i2 = Intent(this, MainActivity::class.java)
+                startActivity(i2)
+
             }else{
                 Toast.makeText(baseContext, "Algo salió mal. Error: " + task.exception, Toast.LENGTH_SHORT).show()
             }
