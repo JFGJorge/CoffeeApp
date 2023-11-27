@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             if (task.isSuccessful){
                 val user = firebaseAuth.currentUser
                 //Comprobar que el UID existe en la base de datos
-                Toast.makeText(baseContext, user?.uid.toString(), Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "¡Bienvenido!", Toast.LENGTH_SHORT).show()
                 // Iniciar aplicación con el usuario ingresado
                 val i = Intent(this, MenuPrincipal:: class.java)
                 startActivity(i)

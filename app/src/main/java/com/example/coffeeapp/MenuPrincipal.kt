@@ -18,10 +18,10 @@ class MenuPrincipal : AppCompatActivity() {
     private lateinit var authStateListener: FirebaseAuth.AuthStateListener
 
     //Referencias a botones
-    val salirBtn : FloatingActionButton = findViewById(R.id.CerrarSesion)
-    val agregarBtn : FloatingActionButton = findViewById(R.id.Agregar)
-    val agregarBebidaBtn : FloatingActionButton = findViewById(R.id.AgregarBebidaa)
-    val agregarPostreBtn : FloatingActionButton = findViewById(R.id.AgregarPostre)
+    lateinit var salirBtn : FloatingActionButton
+    lateinit var agregarBtn : FloatingActionButton
+    lateinit var agregarBebidaBtn : FloatingActionButton
+    lateinit var agregarPostreBtn : FloatingActionButton
 
     //Referencias a animaciones
     val rotateOpen : Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.rotate_open_anim) }
@@ -35,6 +35,11 @@ class MenuPrincipal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_principal)
+
+        salirBtn = findViewById(R.id.CerrarSesion)
+        agregarBtn = findViewById(R.id.Agregar)
+        agregarBebidaBtn = findViewById(R.id.AgregarBebidaa)
+        agregarPostreBtn = findViewById(R.id.AgregarPostre)
 
         // Cerrar sesión e ir a pantalla de inicio
         salirBtn.setOnClickListener(){
@@ -52,6 +57,13 @@ class MenuPrincipal : AppCompatActivity() {
             val i = Intent(this, AgregarBebida::class.java)
             startActivity(i)
         }
+        agregarPostreBtn.setOnClickListener() {
+            //Llama a pantalla de agregar bebida
+            val i = Intent(this, AgregarPostre::class.java)
+            startActivity(i)
+        }
+
+
     }
 
     private fun onAdddButtonClicked() {

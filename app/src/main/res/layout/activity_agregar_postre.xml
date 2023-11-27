@@ -4,16 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fondo"
-    tools:context=".AgregarBebida">
+    tools:context=".AgregarPostre">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="114dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_breakfast_dining_24" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Cancelar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CancelarRegistroPostreBtn" />
 
     <EditText
-        android:id="@+id/NombreBebidaTxt"
+        android:id="@+id/NombrePostreTxt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@color/textos"
         android:ems="10"
@@ -28,12 +49,12 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/PrecioBebidaTxt"
+        android:id="@+id/PrecioPostreTxt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@color/textos"
         android:ems="10"
@@ -43,35 +64,12 @@
         android:minHeight="48dp"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NombreBebidaTxt" />
-
-    <CheckBox
-        android:id="@+id/bebidaCaliente"
-        android:layout_width="191dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/textos"
-        android:text="Bebida Caliente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PrecioBebidaTxt" />
-
-    <CheckBox
-        android:id="@+id/bebidaFria"
-        android:layout_width="191dp"
-        android:layout_height="48dp"
-        android:background="@color/textos"
-        android:text="Bebida Fria"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bebidaCaliente" />
+        app:layout_constraintTop_toBottomOf="@+id/NombrePostreTxt" />
 
     <EditText
-        android:id="@+id/DescripcionBebidaTxt"
+        android:id="@+id/DescripcionPostreTxt"
         android:layout_width="0dp"
         android:layout_height="130dp"
         android:layout_marginHorizontal="15dp"
@@ -85,23 +83,25 @@
         android:inputType="textMultiLine"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bebidaFria" />
+        app:layout_constraintTop_toBottomOf="@+id/PrecioPostreTxt" />
 
     <Button
-        android:id="@+id/RegistrarBebidaBtn"
+        android:id="@+id/RegistrarPostreBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:text="Agregar"
         app:backgroundTint="@color/botones"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DescripcionBebidaTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/DescripcionPostreTxt" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/CancelarRegistroBebidaBtn"
+        android:id="@+id/CancelarRegistroPostreBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -116,36 +116,15 @@
         app:srcCompat="@drawable/return_155" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="114dp"
-        android:layout_height="106dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_coffee_24" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Cancelar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CancelarRegistroBebidaBtn" />
-
-    <ImageView
         android:id="@+id/imageView3"
         android:layout_width="34dp"
         android:layout_height="29dp"
         android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/PrecioBebidaTxt"
-        app:layout_constraintStart_toStartOf="@+id/PrecioBebidaTxt"
-        app:layout_constraintTop_toTopOf="@+id/PrecioBebidaTxt"
+        app:layout_constraintBottom_toBottomOf="@+id/PrecioPostreTxt"
+        app:layout_constraintStart_toStartOf="@+id/PrecioPostreTxt"
+        app:layout_constraintTop_toTopOf="@+id/PrecioPostreTxt"
         app:layout_constraintVertical_bias="0.473"
         app:srcCompat="@drawable/money" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

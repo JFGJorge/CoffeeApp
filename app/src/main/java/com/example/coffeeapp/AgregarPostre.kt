@@ -5,15 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class AgregarBebida : AppCompatActivity() {
+class AgregarPostre : AppCompatActivity() {
 
     //Referencias a botones
     lateinit var cancelarBtn : FloatingActionButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_agregar_bebida)
+        setContentView(R.layout.activity_agregar_postre)
 
-        cancelarBtn = findViewById(R.id.CancelarRegistroBebidaBtn)
+        cancelarBtn = findViewById(R.id.CancelarRegistroPostreBtn)
 
         //Ir a pantalla de creación de usuario
         cancelarBtn.setOnClickListener(){

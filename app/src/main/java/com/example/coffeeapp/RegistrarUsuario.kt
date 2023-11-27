@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -15,7 +16,7 @@ import com.google.firebase.auth.auth
 class RegistrarUsuario : AppCompatActivity() {
     //Autentificacion de Firebase
     private lateinit var firebaseAuth: FirebaseAuth
-
+    lateinit var volver : FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +26,7 @@ class RegistrarUsuario : AppCompatActivity() {
         firebaseAuth = Firebase.auth
 
         //Referencias a botones
-        val volver : ImageView = findViewById(R.id.VolverBtn)
+        volver = findViewById(R.id.VolverBtn)
         val registrar : Button = findViewById(R.id.registrarBtn)
 
         //Referencias a textos
