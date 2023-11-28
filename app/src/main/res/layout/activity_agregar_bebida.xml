@@ -27,31 +27,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <EditText
-        android:id="@+id/PrecioBebidaTxt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/textos"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Precio"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NombreBebidaTxt" />
-
     <CheckBox
         android:id="@+id/bebidaCaliente"
         android:layout_width="191dp"
         android:layout_height="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:background="@color/textos"
         android:text="Bebida Caliente"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +44,7 @@
         android:id="@+id/bebidaFria"
         android:layout_width="191dp"
         android:layout_height="48dp"
+        android:layout_marginStart="16dp"
         android:background="@color/textos"
         android:text="Bebida Fria"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,15 +119,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CancelarRegistroBebidaBtn" />
 
+
+    <EditText
+        android:id="@+id/PrecioBebidaTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/textos"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Precio"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NombreBebidaTxt" />
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="34dp"
         android:layout_height="29dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/PrecioBebidaTxt"
         app:layout_constraintStart_toStartOf="@+id/PrecioBebidaTxt"
         app:layout_constraintTop_toTopOf="@+id/PrecioBebidaTxt"
-        app:layout_constraintVertical_bias="0.473"
+        app:layout_constraintVertical_bias="0.526"
         app:srcCompat="@drawable/money" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

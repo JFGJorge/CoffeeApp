@@ -8,7 +8,9 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 
 
 class MenuPrincipal : AppCompatActivity() {
