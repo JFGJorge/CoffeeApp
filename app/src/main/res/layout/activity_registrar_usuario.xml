@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
+    android:fitsSystemWindows="true"
     tools:context=".RegistrarUsuario">
 
     <EditText
@@ -185,7 +186,7 @@
         android:clickable="true"
         android:contentDescription="@string/common_google_play_services_unknown_issue"
         android:focusable="true"
-        app:backgroundTint="@color/botones"
+        app:backgroundTint="@color/botonesFlotantes"
         app:borderWidth="15dp"
         app:hoveredFocusedTranslationZ="8dp"
         app:layout_constraintStart_toStartOf="parent"

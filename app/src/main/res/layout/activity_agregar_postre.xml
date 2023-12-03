@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fitsSystemWindows="true"
     tools:context=".AgregarPostre">
 
     <ImageView
@@ -88,8 +90,9 @@
         android:layout_marginTop="16dp"
         android:clickable="true"
         android:focusable="true"
+        app:borderWidth="12dp"
         android:contentDescription="@string/side_sheet_behavior"
-        app:backgroundTint="@color/botones"
+        app:backgroundTint="@color/botonesFlotantes"
         app:tint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/PantallaVerBebidas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_coffee_24"
+        android:title="Bebidas" />
+
+    <item
+        android:id="@id/PantallaVerPostres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_breakfast_dining_24"
+        android:title="Postres" />
+</menu>

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
+    android:fitsSystemWindows="true"
     tools:context=".AgregarBebida">
 
     <EditText
@@ -89,9 +90,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:clickable="true"
+        app:borderWidth="12dp"
         android:focusable="true"
         android:contentDescription="@string/side_sheet_behavior"
-        app:backgroundTint="@color/botones"
+        app:backgroundTint="@color/botonesFlotantes"
         app:tint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fitsSystemWindows="true"
     tools:context=".MenuPrincipal">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Agregar"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="112dp"
         android:clickable="true"
         android:focusable="true"
-        app:backgroundTint="@color/botones"
+        app:backgroundTint="@color/botonesFlotantes"
         app:borderWidth="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:backgroundTint="@color/botones"
+        app:backgroundTint="@color/botonesFlotantes"
         app:tint="@color/white"
         android:clickable="true"
         android:contentDescription="@string/common_google_play_services_unknown_issue"
@@ -56,7 +58,7 @@
         android:clickable="true"
         android:visibility="invisible"
         app:borderWidth="12dp"
-        app:backgroundTint="@color/botones"
+        app:backgroundTint="@color/botonesFlotantes2"
         app:tint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/Agregar"
         app:layout_constraintEnd_toEndOf="@+id/Agregar"
@@ -71,10 +73,34 @@
         android:clickable="true"
         android:visibility="invisible"
         app:borderWidth="12dp"
-        app:backgroundTint="@color/botones"
+        app:backgroundTint="@color/botonesFlotantes2"
         app:tint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/AgregarBebidaa"
         app:layout_constraintEnd_toEndOf="@+id/AgregarBebidaa"
         app:srcCompat="@drawable/baseline_breakfast_dining_24"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/navegacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

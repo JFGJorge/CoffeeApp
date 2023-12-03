@@ -43,6 +43,9 @@ class RegistrarUsuario : AppCompatActivity() {
 
         //Crear usuario
         registrar.setOnClickListener(){
+            if(contraseña.length() < 6){
+                Toast.makeText(baseContext, "La contraseña debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show()
+            }
             if(nombre.text.isEmpty() || correo.text.isEmpty() || contraseña.text.isEmpty() || contraseña2.text.isEmpty()){
                 Toast.makeText(baseContext, "Porfavor llenar todas las casillas", Toast.LENGTH_SHORT).show()
             } else{

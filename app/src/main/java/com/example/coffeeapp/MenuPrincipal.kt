@@ -7,6 +7,14 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.replace
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.example.coffeeapp.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -19,11 +27,14 @@ class MenuPrincipal : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var authStateListener: FirebaseAuth.AuthStateListener
 
+    private lateinit var bottomNavigationView: BottomNavigationView
+
     //Referencias a botones
     lateinit var salirBtn : FloatingActionButton
     lateinit var agregarBtn : FloatingActionButton
     lateinit var agregarBebidaBtn : FloatingActionButton
     lateinit var agregarPostreBtn : FloatingActionButton
+
 
     //Referencias a animaciones
     val rotateOpen : Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.rotate_open_anim) }
@@ -37,6 +48,27 @@ class MenuPrincipal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_principal)
+
+        //Referencia al menu inferior
+        bottomNavigationView = findViewById(R.id.bottomNavigationView)
+        bottomNavigationView.setOnItemSelectedListener { menuItem ->
+            when(menuItem.itemId){
+                //Referencia a fragmento de ver bebidas
+                R.id.PantallaVerBebidas ->{
+                    replaceFragment(VerBebidas())
+                    true
+                }
+                //Referencia a fragmento de ver postres
+                R.id.PantallaVerPostres ->{
+                    replaceFragment(VerPostres())
+                    true
+                }
+                else -> false
+            }
+        }
+        //Definir fragmento principal a iniciar
+        replaceFragment(VerBebidas())
+
 
         salirBtn = findViewById(R.id.CerrarSesion)
         agregarBtn = findViewById(R.id.Agregar)
@@ -64,9 +96,12 @@ class MenuPrincipal : AppCompatActivity() {
             val i = Intent(this, AgregarPostre::class.java)
             startActivity(i)
         }
-
-
     }
+
+    private fun replaceFragment(fragment: Fragment){
+        supportFragmentManager.beginTransaction().replace(R.id.frameLayout, fragment).commit()
+    }
+
 
     private fun onAdddButtonClicked() {
         setVisibility(click)

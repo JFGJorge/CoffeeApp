@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/verBebidas">
+
+    <fragment
+        android:id="@+id/verBebidas"
+        android:name="com.example.coffeeapp.VerBebidas"
+        android:label="fragment_ver_bebidas"
+        tools:layout="@layout/fragment_ver_bebidas" />
+    <fragment
+        android:id="@+id/verPostres"
+        android:name="com.example.coffeeapp.VerPostres"
+        android:label="fragment_ver_postres"
+        tools:layout="@layout/fragment_ver_postres" />
+</navigation>
