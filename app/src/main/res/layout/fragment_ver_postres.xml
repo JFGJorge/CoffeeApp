@@ -7,11 +7,24 @@
     tools:context=".VerPostres">
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/text2479"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bebidas"
-        tools:layout_editor_absoluteX="171dp"
-        tools:layout_editor_absoluteY="354dp"
-        android:layout_gravity="center"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="top|center"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="153dp"
+        android:fontFamily="@font/madiffure"
+        android:text="Postres"
+        android:textSize="35dp"
+        android:textStyle="italic|bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"/>
+
 </FrameLayout>
