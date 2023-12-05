@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class AdapterBebida(private val bebidaList : ArrayList<Bebida>) : RecyclerView.Adapter <AdapterBebida.MyViewHolderBebida>(){
+class AdapterBebida(private val bebidaList: ArrayList<Bebida>) : RecyclerView.Adapter <AdapterBebida.MyViewHolderBebida>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolderBebida {

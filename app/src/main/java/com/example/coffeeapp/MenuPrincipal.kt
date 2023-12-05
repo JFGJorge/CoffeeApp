@@ -13,12 +13,19 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.coffeeapp.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class MenuPrincipal : AppCompatActivity() {
@@ -28,6 +35,10 @@ class MenuPrincipal : AppCompatActivity() {
     private lateinit var authStateListener: FirebaseAuth.AuthStateListener
 
     private lateinit var bottomNavigationView: BottomNavigationView
+
+    private lateinit var dbref : DatabaseReference
+    private lateinit var bebidaRecyclerView : RecyclerView
+    private lateinit var bebidaArrayList : ArrayList<Bebida>
 
     //Referencias a botones
     lateinit var salirBtn : FloatingActionButton
@@ -45,6 +56,8 @@ class MenuPrincipal : AppCompatActivity() {
     //Referencia a los clicks de la pantalla
     var click = false
 
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_principal)
@@ -84,7 +97,7 @@ class MenuPrincipal : AppCompatActivity() {
         //Acciones de botones
         agregarBtn.setOnClickListener(){
             //Llama al metodo para mostrar los botones ocultos
-            onAdddButtonClicked()
+            onAddButtonClicked()
         }
         agregarBebidaBtn.setOnClickListener() {
             //Llama a pantalla de agregar bebida
@@ -103,7 +116,7 @@ class MenuPrincipal : AppCompatActivity() {
     }
 
 
-    private fun onAdddButtonClicked() {
+    private fun onAddButtonClicked() {
         setVisibility(click)
         setAnimation(click)
         click = !click

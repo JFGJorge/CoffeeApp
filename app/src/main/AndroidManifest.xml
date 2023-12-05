@@ -25,6 +25,9 @@
             android:exported="false"
             android:label="@string/title_activity_menu_principal" />
         <activity
+            android:name=".MostrarBebida"
+            android:exported="true"/>
+        <activity
             android:name=".RegistrarUsuario"
             android:exported="false" />
         <activity
