@@ -37,8 +37,6 @@ class MenuPrincipal : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
 
     private lateinit var dbref : DatabaseReference
-    private lateinit var bebidaRecyclerView : RecyclerView
-    private lateinit var bebidaArrayList : ArrayList<Bebida>
 
     //Referencias a botones
     lateinit var salirBtn : FloatingActionButton

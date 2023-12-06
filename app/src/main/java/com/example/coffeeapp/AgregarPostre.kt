@@ -39,9 +39,9 @@ class AgregarPostre : AppCompatActivity() {
 
     private fun completarRegistro(){
         //Referencias a textos
-        val nombrePostre = findViewById<EditText>(R.id.NombrePostreTxt).text.toString()
-        val precioPostre = "$" + findViewById<EditText>(R.id.PrecioPostreTxt).text.toString().toDouble() + " MXN"
-        val descripcion = findViewById<EditText>(R.id.DescripcionPostreTxt).text.toString()
+        val nombrePostre = findViewById<EditText>(R.id.NombrePostreTxt)?.text?.toString() ?: ""
+        val precioPostre = "$" + findViewById<EditText>(R.id.PrecioPostreTxt)?.text?.toString()?.toDouble() + " MXN"
+        val descripcion = findViewById<EditText>(R.id.DescripcionPostreTxt)?.text?.toString() ?: ""
 
 
         // Crear un mapa con los datos del postre
@@ -67,7 +67,7 @@ class AgregarPostre : AppCompatActivity() {
         // Limpiar los campos después de registrar la bebida
         findViewById<EditText>(R.id.NombrePostreTxt).text.clear()
         findViewById<EditText>(R.id.PrecioPostreTxt).text.clear()
-        findViewById<EditText>(R.id.DescripcionBebidaTxt).text.clear()
+        findViewById<EditText>(R.id.DescripcionPostreTxt).text.clear()
     }
 
 }

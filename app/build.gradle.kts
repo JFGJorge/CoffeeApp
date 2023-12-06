@@ -62,6 +62,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics:21.4.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
     implementation("com.google.firebase:firebase-firestore:24.9.1")

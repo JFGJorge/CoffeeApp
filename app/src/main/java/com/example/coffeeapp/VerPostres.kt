@@ -1,10 +1,15 @@
 package com.example.coffeeapp
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.FirebaseFirestore
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +26,9 @@ class VerPostres : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private lateinit var recyclerViewPostres : RecyclerView
+    private lateinit var postresAdapter: AdapterPostre
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -36,6 +44,38 @@ class VerPostres : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ver_postres, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Configurar RecyclerView y Adapter
+        recyclerViewPostres = view.findViewById(R.id.recyclerViewPostres)
+        postresAdapter = AdapterPostre(emptyList()) // Inicializar con una lista vacía
+        recyclerViewPostres.layoutManager = LinearLayoutManager(context)
+        recyclerViewPostres.adapter = postresAdapter
+
+        // Obtener datos de Firestore y actualizar el RecyclerView
+        getPostresList()
+    }
+
+    private fun getPostresList() {
+        // Consulta a Firestore para obtener las bebidas
+        val db = FirebaseFirestore.getInstance()
+        db.collection("Postres")
+            .get()
+            .addOnSuccessListener { result ->
+                val postresList = mutableListOf<Postre>()
+                for (document in result) {
+                    val postre = document.toObject(Postre::class.java)
+                    postresList.add(postre)
+                }
+                postresAdapter.setData(postresList)
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "Error getting documents: ", exception)
+            }
+    }
+
 
     companion object {
         /**

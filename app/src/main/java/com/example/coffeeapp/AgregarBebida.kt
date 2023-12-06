@@ -19,8 +19,6 @@ import org.w3c.dom.Text
 class AgregarBebida : AppCompatActivity() {
 
     //Autentificación de Firebase
-    private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var authStateListener: FirebaseAuth.AuthStateListener
     private val db = FirebaseFirestore.getInstance()
 
     //Referencias a botones
