@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:id="@+id/informacionBebida"
-        android:layout_width="346dp"
+        android:layout_width="291dp"
         android:layout_height="match_parent"
         android:layout_marginVertical="6dp"
         android:layout_marginStart="16dp"
@@ -78,7 +78,7 @@
 
             <TextView
                 android:id="@+id/categoriaBebidaId"
-                android:layout_width="237dp"
+                android:layout_width="188dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:fontFamily="@font/kinoble"
@@ -103,13 +103,29 @@
 
         <TextView
             android:id="@+id/descripcionBebidaId"
-            android:layout_width="327dp"
+            android:layout_width="279dp"
             android:layout_height="60dp"
             android:fontFamily="@font/kinoble"
             android:text="Descripcion "
             android:textSize="15dp"
             tools:ignore="TextSizeCheck" />
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/eliminarBebidaCardview"
+        android:layout_width="62dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:srcCompat="@drawable/ic_delete"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/editarBebidaCardview"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        app:srcCompat="@drawable/ic_edit"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
 </androidx.cardview.widget.CardView>

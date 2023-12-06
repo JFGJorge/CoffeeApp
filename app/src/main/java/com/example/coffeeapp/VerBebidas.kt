@@ -3,24 +3,22 @@ package com.example.coffeeapp
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.firestore.FirebaseFirestore
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.coffeeapp.databinding.ActivityMainBinding
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.firestore
 
+class VerBebidas : Fragment(), AdapterBebida.OnDeleteClickListener {
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-class VerBebidas : Fragment() {
-
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    private lateinit var recyclerViewBebidas: RecyclerView
     private lateinit var bebidasAdapter: AdapterBebida
+    private lateinit var recyclerViewBebidas: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,19 +30,22 @@ class VerBebidas : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Configurar RecyclerView y Adapter
         recyclerViewBebidas = view.findViewById(R.id.recyclerViewBebidas)
-        bebidasAdapter = AdapterBebida(emptyList()) // Inicializar con una lista vacía
+        bebidasAdapter = AdapterBebida(emptyList())
+
+        // Establece el listener antes de asignar el adaptador al RecyclerView
+        bebidasAdapter.setOnDeleteClickListener(this)
+
         recyclerViewBebidas.layoutManager = LinearLayoutManager(context)
         recyclerViewBebidas.adapter = bebidasAdapter
 
-        // Obtener datos de Firestore y actualizar el RecyclerView
+        // Cargar datos al iniciar el fragmento
         getBebidasList()
     }
 
     private fun getBebidasList() {
         // Consulta a Firestore para obtener las bebidas
-        val db = FirebaseFirestore.getInstance()
+        val db = Firebase.firestore
         db.collection("Bebidas")
             .get()
             .addOnSuccessListener { result ->
@@ -56,27 +57,11 @@ class VerBebidas : Fragment() {
                 bebidasAdapter.setData(bebidasList)
             }
             .addOnFailureListener { exception ->
-                Log.d(TAG, "Error getting documents: ", exception)
+                // Muestra un mensaje de error al usuario
+                Toast.makeText(context, "Error al obtener las bebidas", Toast.LENGTH_SHORT).show()
             }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment VerPostres.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            VerPostres().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onDeleteClick(documentId: String) {
     }
 }
